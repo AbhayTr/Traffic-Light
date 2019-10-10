@@ -3,6 +3,7 @@ import threading
 
 le = int(input("Enter Time For Red Light: "))
 le1 = int(input("Enter Time For Green Light: "))
+speed = float(input("Enter Speed Of Traffic Light: "))
 a = 0
 n = 6
 d = 0
@@ -54,6 +55,7 @@ def change():
     global n
     global d
     global s
+    global speed
     global st
     global gz
     global le
@@ -131,7 +133,7 @@ def change():
             l.image = p6
             j.config(fg = "yellow")
             j.config(text = "")
-    t = threading.Timer(1, change).start()
+    t = threading.Timer(speed, change).start()
 change()
 f.pack()
 f.mainloop()
